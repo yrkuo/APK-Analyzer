@@ -15,3 +15,10 @@ APK分析練習
 1.利用Genymotion建立測試環境，觀看程式執行過程
 2.比對程式碼找出不合理的地方
 ```
+
+```
+2018/06/06
+今天嘗試建立分析環境
+1.利用VirtualBOX安裝Santoku linux
+2.嘗試使用androguard提供的各種工具分析APK
+```
