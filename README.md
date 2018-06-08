@@ -22,3 +22,8 @@ APK分析練習
 1.利用VirtualBOX安裝Santoku linux
 2.嘗試使用androguard提供的各種工具分析APK
 ```
+
+```
+2018/06/07
+1.找出APK中的各項URL功用及觸發條件
+```
