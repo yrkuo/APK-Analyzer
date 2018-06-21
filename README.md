@@ -3,10 +3,22 @@ APK分析練習
 
 ```
 2018/06/04
-今天針對提供的APK進行反組譯，使用工具：apktool、dex2jar、jd-gui。
+針對提供的APK進行反組譯，使用工具：apktool、dex2jar、jd-gui。
 1.查看AndroidManifest.xml，找尋切入點
-2.利用dex2jar對classes.dex進行重組譯得到jar檔
-3.利用jd-gui觀看原始程式碼
+  收集使用的權限:
+    android.permission.READ_PHONE_STATE
+    android.permission.SEND_SMS
+    android.permission.READ_SMS
+    android.permission.WRITE_SMS
+    android.permission.RECEIVE_SMS
+    android.permission.INTERNET
+    android.permission.READ_CONTACTS
+    android.permission.RECEIVE_BOOT_COMPLETED
+  收集APK使用的Activity、Service、Receiver。
+  
+================================================
+
+2.利用Genymotion建立測試環境，觀看程式執行過程
 ```
 
 ```
