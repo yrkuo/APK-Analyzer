@@ -111,3 +111,53 @@ SendToContacts- 傳送詐騙簡訊給手機聯絡人
 持續追蹤smali code
 =====================================
 ```
+
+```
+2018/06/25
+編寫Bash script自動化分析apk
+=====================================
+研究腳本怎麼寫...
+mkdir reports     //產生報告存放的資料夾
+
+for apk in $(find $1 -maxdepth 1 -name "*.apk")   //從存放apk的資料夾中一一讀入apk
+do
+        /home/yrkuo/gu/details/dt/bin/python joe_security.py $apk > $apk.txt    //將每一隻apk產出的報告存成txt檔
+done
+```
+
+```
+2018/06/26
+編寫Bash script自動化分析apk
+=====================================
+修改腳本
+ls -d $1reports || mkdir $1reports     //先檢查是否已存在資料夾，沒有則產生報告存放的資料夾（位置為apk資料夾下）
+
+for apk in $(find $1 -maxdepth 1 -name "*.apk")
+do
+        //將原先只能存放在apk資料夾中的報告改為可以指定存放資料夾，並以apk名稱命名報告txt檔
+        //${apk##*/}這寫法可以將原先含路徑的參數改為只保留最後一個/左邊的文字
+        /home/yrkuo/gu/details/dt/bin/python joe_security.py $apk > $1reports/${apk##*/}.txt  
+done
+
+```
+
+```
+2018/06/27
+編寫Bash script自動化分析apk
+=====================================
+修改腳本
+IFS=$(echo -en "\n\b")    //加入此行的目的是解決若apk檔名有空格的情況下會發生重複讀檔的BUG
+
+ls -d $1reports || mkdir $1reports     //先檢查是否已存在資料夾，沒有則產生報告存放的資料夾（位置為apk資料夾下）
+
+for apk in $(find $1 -maxdepth 1 -name "*.apk")
+do
+        //將原先只能存放在apk資料夾中的報告改為可以指定存放資料夾，並以apk名稱命名報告txt檔
+        //${apk##*/}這寫法可以將原先含路徑的參數改為只保留最後一個/左邊的文字
+        /home/yrkuo/gu/details/dt/bin/python joe_security.py $apk > $1reports/${apk##*/}.txt  
+done
+-------------------------------------
+echo -n 不換行輸出
+echo -e 處理特殊字元
+-------------------------------------
+```
