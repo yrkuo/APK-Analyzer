@@ -151,7 +151,7 @@ ls -d $1reports || mkdir $1reports     //先檢查是否已存在資料夾，沒
 for apk in $(find $1 -maxdepth 1 -name "*.apk")
 do
         //將原先只能存放在apk資料夾中的報告改為可以指定存放資料夾，並以apk名稱命名報告txt檔
-        //${apk##*/}這寫法可以將原先含路徑的參數改為只保留最後一個/左邊的文字
+        //${apk##*/}這寫法可以將原先含路徑的參數改為只保留最後一個/邊的文字
         /home/yrkuo/gu/details/dt/bin/python joe_security.py $apk > $1reports/${apk##*/}.txt  
 done
 
